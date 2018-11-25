@@ -34,15 +34,27 @@ export class CounterComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch(new CounterActions.CountIncrement());
+    this.store.dispatch(
+      new CounterActions.CountIncrement()
+    );
   }
 
   decrement() {
-    this.store.dispatch(new CounterActions.CountDecrement());
+    this.store.dispatch(
+      new CounterActions.CountDecrement()
+    );
   }
 
   reset() {
-    this.store.dispatch(new CounterActions.CounterReset());
+    this.store.dispatch(
+      new CounterActions.CounterReset()
+    );
+  }
+
+  onSubmit() {
+    this.store.dispatch(
+      new CounterActions.CounterSet(this.counterForm.value.val)
+    );
   }
 
 }
