@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as CounterReducer from './state/counter.reducer';
@@ -14,10 +20,15 @@ export class CounterComponent implements OnInit {
   count$: Observable<number>;
 
   constructor(
-    private store: Store<CounterReducer.State>
+    private store: Store<CounterReducer.State>,
+    private fb: FormBuilder,
   ) {
     this.count$ = store.select(getCount);
   }
+
+  counterForm: FormGroup = this.fb.group({
+    val: new FormControl(0, [Validators.required]),
+  });
 
   ngOnInit() {
   }

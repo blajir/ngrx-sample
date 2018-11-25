@@ -1,3 +1,9 @@
+<form [formGroup]="counterForm" (ngSubmit)="onSubmit()">
+  <input type="number" formControlName="val">
+  <input type="submit" value="setting">
+  <br>
+</form>
+
 <button (click)=increment()>increment</button>
 <button (click)=decrement()>decrement</button>
 <button (click)=reset()>reset</button>
