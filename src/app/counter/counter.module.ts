@@ -4,6 +4,7 @@ import { CounterComponent } from './counter.component';
 import { StoreModule } from '@ngrx/store';
 import * as fromCounter from './state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -11,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     StoreModule.forFeature('counter', fromCounter.reducers, { metaReducers: fromCounter.metaReducers }),
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [CounterComponent],
   exports: [CounterComponent]
