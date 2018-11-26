@@ -1,0 +1,13 @@
+.cunter-wrapper {
+  padding: 24px;
+}
+
+.button-group {}
+
+.button-group button + button {
+  margin-left: 10px;
+}
+
+.total-counter {
+  margin-top: 10px;
+}

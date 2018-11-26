@@ -1,13 +1,15 @@
-<form class="example-form" [formGroup]="counterForm" (ngSubmit)="onSubmit()">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Set counter" type="number" formControlName="val">
-  </mat-form-field>
-  <button mat-stroked-button type="submit">setting</button>
-  <br>
-</form>
+<div class="cunter-wrapper">
+  <form class="example-form" [formGroup]="counterForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Set counter" type="number" formControlName="val">
+    </mat-form-field>
+    <button mat-stroked-button type="submit">setting</button>
+  </form>
 
-<button mat-stroked-button (click)=increment()>increment</button>
-<button mat-stroked-button (click)=decrement()>decrement</button>
-<button mat-stroked-button (click)=reset()>reset</button>
-<div>counter: {{count$ | async}}</div>
-
+  <div class="button-group">
+    <button mat-stroked-button (click)=increment()>increment</button>
+    <button mat-stroked-button (click)=decrement()>decrement</button>
+    <button mat-stroked-button (click)=reset()>reset</button>
+  </div>
+  <div class="total-counter">counter: {{count$ | async}}</div>
+</div>
